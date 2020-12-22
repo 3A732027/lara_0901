@@ -20,10 +20,11 @@ class AdminPostsController extends Controller
     {
         return view('admin.posts.create');
     }
-    
+
     public function store(Request $request)
     {
         Post::create($request->all());
+        return redirect()->route('admin.posts.index');
     }
 
     public function edit($id)
